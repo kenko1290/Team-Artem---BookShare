@@ -1,0 +1,125 @@
+head {
+    background-color: black;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+nav {
+    position: relative;
+}
+
+nav ul {
+    margin-top: 25px;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    word-spacing: 400px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    margin-right: 40px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.headshot {
+    max-height: 400px;
+    max-width: auto;
+    position: relative;
+    left: 60%;
+}
+
+.resume {
+    display: inline-block;
+    border: 1px solid white;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    font-size: 10px;
+    position: relative;
+    top: 150px;
+}
+
+.resume:hover {
+    background-color: rgb(44, 43, 43);
+    text-decoration: none;
+}
+
+.shortbody {
+    font-family: sans-serif;
+    position: relative;
+    top: 150px;
+    line-height: 0px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.shortbody a {
+    line-height: 20px;
+    text-decoration: underline;
+    color: rgba(216, 162, 15, 0.945);
+    font-size: 20px;
+}
+
+.proj {
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.projtitle {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-left:20%;
+}
+
+.projdesc {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    left: 20px;
+    max-width: 50%;
+}
+
+.projimage {
+    max-height: auto;
+    max-width: 150px;
+    margin-left:20%;
+}
+
+.projsection {
+    margin-bottom: 50px;
+}
+
+.about {
+    font-family: "Open Sans", sans-serif;
+    font-size: 40px;
+    text-align: left;
+    margin-top: 5%;
+    margin-left:20%;
+    margin-bottom: 15px;
+}
+
+.aboutdesc {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+
+    max-width: 35%;
+}
