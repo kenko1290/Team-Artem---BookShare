@@ -18,3 +18,6 @@ export default function Navbar() {
         </nav>
     )
 }
+
+//Add a post button and rest of navbar components
+//Add search bar
