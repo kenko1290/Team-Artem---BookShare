@@ -26,6 +26,7 @@ function BookInfo({
 			<h6>
 				<strong>{author}</strong>
 			</h6>
+			<br></br>
 			<h4>
 				<strong>Book Summary:</strong>
 			</h4>
@@ -69,10 +70,11 @@ function BookInfo({
 						<b>Location:</b> {return_location}
 						<br></br>
 						<b>Time:</b> {return_time}
+						<br></br>
 					</div>
 				)}
 			</p>
-			<br></br>
+			
 			<p>
 				Note: If the book's owner's preferences don't work for you, you can
 				indicate this in your request and provide your own preferences.

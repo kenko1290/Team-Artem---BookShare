@@ -1,11 +1,12 @@
 import "./App.css";
-import ShowBookInfo from "./book_info/book_information";
-
+import ShowBookInfo from "./book_info/book_information"
+import EditProfile from "./edit_profile";
 
 function App() {
 	return (
 		<div className="App">
-			<ShowBookInfo />
+			{/* <ShowBookInfo />  */}
+			<EditProfile />
 		</div>
 	);
 }
