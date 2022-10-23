@@ -13,6 +13,12 @@ export default function Navbar() {
                     <a href="/home">Home</a>
                 </li>
                 <li>
+                    <a href="/post">Post</a>
+                </li>
+                <li>
+                    <a href="/request">Request</a>
+                </li>
+                <li>
                     <a href="/my-account">My Account</a>
                 </li>
                 <li>
@@ -41,6 +47,3 @@ const SearchBar = () => (
     </form>
 );
 
-
-//Add a post button and rest of navbar components
-//Add search bar
