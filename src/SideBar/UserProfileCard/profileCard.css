@@ -4,6 +4,8 @@
 
 .cardContainer{
     display: flex;
+    width: 160px;
+    max-height: px;
 }
 .image {
     max-width: 30%;
