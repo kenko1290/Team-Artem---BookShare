@@ -11,6 +11,10 @@ export default function HomePage1() {
                     </li>
                 </ul>
             </nav>
+            <div className="btns">
+                <button className="login-btn">Login</button>
+                <button className="sign-up">Create an Account</button>
+            </div>
         </>
     )
 }
