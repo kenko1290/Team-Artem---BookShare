@@ -1,4 +1,6 @@
+import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
 import BookList from './components/BookList';
 import PostBookForm from './components/PostBookForm';
 
@@ -50,6 +52,7 @@ function App() {
     <div>
       <PostBookForm/>
       <BookList bookList={books}/>
+      <Navbar />
     </div>
   );
 }
