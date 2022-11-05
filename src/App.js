@@ -1,5 +1,6 @@
 import './App.css';
 import BookList from './components/BookList';
+import PostBookForm from './components/PostBookForm';
 
 function App() {
   const books = [
@@ -46,9 +47,10 @@ function App() {
     },
   ];
   return (
-    <BookList
-          bookList={books}
-    />
+    <div>
+      <PostBookForm/>
+      <BookList bookList={books}/>
+    </div>
   );
 }
 
