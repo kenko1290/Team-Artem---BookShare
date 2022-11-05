@@ -1,19 +1,17 @@
 import "./App.css";
 
 // import Settings from "./settings";
-import EditProfile from "./edit_profile/edit_profile";
+// import EditProfile from "./edit_profile/edit_profile";
 
-// import Profile from "./profile/profile";
-
-
+import Profile from "./profile/profile";
 
 function App() {
 	return (
 		<div className="App">
 
-			<EditProfile />
+			{/* <EditProfile /> */}
 			{/* <Settings /> */}
-			{/* <Profile /> */}
+			<Profile />
 		</div>
 	);
 }
