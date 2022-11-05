@@ -1,4 +1,4 @@
-export default function smallNav() {
+export default function SmallNav() {
     return (
         <>
             <nav className="nav">
