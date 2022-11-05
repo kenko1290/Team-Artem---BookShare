@@ -1,12 +1,19 @@
 import "./App.css";
-import ShowBookInfo from "./book_info/book_information"
-import EditProfile from "./edit_profile";
+
+// import Settings from "./settings";
+import EditProfile from "./edit_profile/edit_profile";
+
+// import Profile from "./profile/profile";
+
+
 
 function App() {
 	return (
 		<div className="App">
-			{/* <ShowBookInfo />  */}
+
 			<EditProfile />
+			{/* <Settings /> */}
+			{/* <Profile /> */}
 		</div>
 	);
 }
