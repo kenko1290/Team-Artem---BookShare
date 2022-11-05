@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './homepage1Styles.css';
-import './smallNavStyles.css'
+import './smallNavStyles.css';
+import './AboutUsStyles.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
