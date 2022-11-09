@@ -87,9 +87,9 @@ function PostBookForm() {
         <input class="col-3 bg-light"/>
       </div>
       <div class="row">
-        <div class="col-5"></div>
-        <button class="col-1">Post</button>
-        <div class="col-6"></div>
+        <div class="col-4"></div>
+        <button class="col-2">Post Book</button>
+        <div class="col"></div>
       </div>
     </div>
     

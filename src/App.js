@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './Navbar';
 import BookList from './components/BookList';
-import PostBookForm from './components/PostBookForm';
+import PostPage from './pages/PostPage';
 
 function App() {
   const books = [
@@ -50,11 +48,9 @@ function App() {
   ];
   return (
     <div>
-      <PostBookForm/>
-      <BookList bookList={books}/>
-      <Navbar />
+      <PostPage/>
     </div>
   );
 }
-
+//<BookList bookList={books}/>
 export default App;
