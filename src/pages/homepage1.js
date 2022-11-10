@@ -1,4 +1,4 @@
-import SmallNav from './SmallNav.js';
+import SmallNav from '../components/smallNav.js';
 
 export default function HomePage1() {
     return (
