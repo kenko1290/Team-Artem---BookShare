@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "./navStyles.css"
+import './homepage1Styles.css';
+import './smallNavStyles.css';
+import './AboutUsStyles.css'
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
