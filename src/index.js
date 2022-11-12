@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "./navStyles.css"
-import './homepage1Styles.css';
-import './smallNavStyles.css';
-import './AboutUsStyles.css'
+import './pages/homepage1Styles.css';
+import './components/smallNavStyles.css';
+import './pages/AboutUsStyles.css'
+
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
