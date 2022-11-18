@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+.sideBarContainer{
+    max-width: 200px;
+    margin-top: 40px;
+    padding: 0 20px;
+    padding-bottom: 400px;
+    /*border: black solid 1px;*/
+}
+
+.imageContainer{
+    background-image: url("https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png");
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
