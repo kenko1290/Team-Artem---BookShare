@@ -7,7 +7,9 @@ import PostPage from './pages/PostPage';
 function App() {
   return (
     <div>
-      <HomePage1/>
+  
+      <AboutUs/>
+
     </div>
   );
 }
