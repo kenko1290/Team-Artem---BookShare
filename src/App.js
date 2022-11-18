@@ -3,13 +3,17 @@ import BookList from './components/BookList';
 import AboutUs from './pages/AboutUs';
 import HomePage1 from './pages/homepage1';
 import PostPage from './pages/PostPage';
+import Profile from './components/profile/profile';
 
 function App() {
-  return (
-    <div>
-      <HomePage1/>
-    </div>
-  );
+	return (
+		<div className="App">
+
+			{/* <EditProfile /> */}
+			{/* <Settings /> */}
+			<Profile />
+		</div>
+	);
 }
 
 export default App;

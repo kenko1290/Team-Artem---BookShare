@@ -1,0 +1,13 @@
+.card-body {
+    background: #AFAFAF;
+}
+
+.form-check-label {
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.profile-form label {
+    margin-left: auto;
+    width: 8%;
+}
