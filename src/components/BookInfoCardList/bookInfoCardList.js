@@ -1,4 +1,5 @@
 import BookInfoCard from "../BookInfoCard/bookInfoCard";
+import "./bookInfoCardList.css"
 import React from "react";
 
 
@@ -61,7 +62,7 @@ function BookInfoCardList(props){
 
 
     return (
-        <ul>
+        <ul className="listContainer">
             {heading}
             {props.bookList.map((book) => {
                 return (
