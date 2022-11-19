@@ -21,6 +21,8 @@ function App() {
 				<Route path="/" element={<HomePage1	 />} />
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/settings" element={<Settings />} />
+				<Route path="/my-account" element={<MyAccountPage />} />
+				<Route path="/request" element={<RequestsPage />} />
 			</Routes>
 		</Router>
 	);
