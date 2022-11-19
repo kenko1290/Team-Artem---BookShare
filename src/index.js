@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import "./navStyles.css"
+import "./components/navStyles.css"
 import './pages/homepage1Styles.css';
 import './components/smallNavStyles.css';
 import './pages/AboutUsStyles.css'

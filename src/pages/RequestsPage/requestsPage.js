@@ -1,5 +1,4 @@
 import React from "react"
-import Navbar from "../../components/Navbar"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
 
@@ -39,7 +38,6 @@ const books = [
 export default function RequestsPage(){
     const requestsPage = 
     <div>
-        <Navbar /> 
         <SideBar nav="requests"/>
         <BookInfoCardList bookList={books} tab={currentTab} />
     </div>
