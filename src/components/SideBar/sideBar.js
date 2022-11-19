@@ -2,8 +2,8 @@ import React from "react";
 import "./sideBar.css"
 import ProfileCard from "./UserProfileCard/profileCard";
 
-function SideBar(){
-    let nav = "bookPage";
+function SideBar(props){
+    let nav = {props};
     const homePageSideBar = 
     <div className="sideBarContainer">
             <h5>Filter By Classes</h5>

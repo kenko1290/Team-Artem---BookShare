@@ -1,9 +1,6 @@
-import SmallNav from '../components/smallNav.js';
-
 export default function AboutUs() {
     return (
         <>
-            <SmallNav />
             <div class="about-section">
                 <h1>About Us Page</h1>
                 <p>Finding Books Easy</p>
