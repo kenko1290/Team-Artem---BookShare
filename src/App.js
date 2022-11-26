@@ -13,12 +13,12 @@ import MyAccountPage from "./pages/MyAccountPage/myAccountPage";
 function App() {
 	return (
 		<Router>
-			<Navbar/>
+			<Navbar />
 			<Routes>
 				<Route path="/about" element={<AboutUs />} />
 				<Route path="/post" element={<PostPage />} />
-				<Route path="/home" element={<HomePage1	 />} />
-				<Route path="/" element={<HomePage1	 />} />
+				<Route path="/home" element={<HomePage1 />} />
+				<Route path="/" element={<HomePage1 />} />
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/settings" element={<Settings />} />
 				<Route path="/my-account" element={<MyAccountPage />} />
