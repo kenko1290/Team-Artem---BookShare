@@ -8,7 +8,7 @@ function NewNav() {
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">BookShare</Navbar.Brand>
+                <Navbar.Brand href="/home">BookShare</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
