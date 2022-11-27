@@ -8,7 +8,7 @@ const { RequestedTextbook } = db;
 //    GET    /api/posted_textbooks , only return the book id and owner
 //    GET    /api/posted_textbooks/:id
 //    POST   /api/posted_textbooks
-//    POST   /api/posted_textbooks/approve, set the lended flag to true
+//    PUT   /api/posted_textbooks/approve, set the lended flag to true
 //    PUT    /api/posted_textbooks/:id
 //    DELETE /api/posted_textbooks/:id
 //
@@ -43,7 +43,7 @@ router.post("/", (req, res) => {
 		});
 });
 
-router.post("/approve", (req, res) => {
+router.put("/approve", (req, res) => {
 	let { bookRequester, bookOwner, bookId } = req.body;
 
 	RequestedTextbook.update(

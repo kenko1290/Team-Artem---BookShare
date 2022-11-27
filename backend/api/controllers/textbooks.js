@@ -6,11 +6,10 @@ const { PostedTextbook } = db;
 // This is a simple example for providing basic CRUD routes for
 // a resource/model. It provides the following:
 //    GET    /api/posted_textbooks
-//    POST   /api/posted_textbooks
+//    POST   /api/posted_textbooks, posting a new textbook
 //    GET    /api/posted_textbooks/:id
-//    GET    /api/posted_textbooks/:subject
+//    GET    /api/posted_textbooks/:subject , search through subject
 //    GET    /api/posted_textbooks/:avaliable  , find all textbook that has avaliable = true
-//    PUT    /api/posted_textbooks/:id
 //    DELETE /api/posted_textbooks/:id
 //
 // The full URL's for these routes are composed by combining the

@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
 			bookRequester: { type: DataTypes.STRING },
 			bookOwner: { type: DataTypes.STRING },
 			bookId: { type: DataTypes.STRING },
-			lended: { type: DataTypes.BOOLEAN, defaultValue: false, },
+			lended: { type: DataTypes.BOOLEAN, defaultValue: false },
 		},
 		{
 			sequelize,
