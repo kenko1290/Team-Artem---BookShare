@@ -1,43 +1,31 @@
-import './App.css';
-import BookInfoCardList from './BookInfoCardList/bookInfoCardList';
-
-let currentTab = "myRequests";
-const books = [
-  {
-    id: 0,
-    title: "Test Title1",
-    author: "John Doe1",
-    bookImage: "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png",
-    date: "00/00/0000",
-    profileImage: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
-    profileName: "Average Joe1",
-  },
-
-  {
-    id: 1,
-    title: "Test Title2",
-    author: "John Doe2",
-    bookImage: "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png",
-    date: "00/00/0000",
-    profileImage: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
-    profileName: "Average Joe2",
-  },
-
-  {
-    id: 2,
-    title: "Test Title3",
-    author: "John Doe3",
-    bookImage: "https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png",
-    date: "00/00/0000",
-    profileImage: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
-    profileName: "Average Joe3"
-  }
-
-]
-
+import "./App.css";
+import Settings from "./settings";
+// import EditProfile from "./edit_profile/edit_profile";
+import AboutUs from './pages/AboutUs';
+import HomePage1 from './pages/homepage1';
+import PostPage from './pages/PostPage';
+import Profile from './components/profile/profile';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from "./components/Navbar";
+import RequestsPage from "./pages/RequestsPage/requestsPage";
+import MyAccountPage from "./pages/MyAccountPage/myAccountPage";
 
 function App() {
-  return <BookInfoCardList bookList={books} tab={currentTab}/>;
+	return (
+		<Router>
+			<Navbar />
+			<Routes>
+				<Route path="/about" element={<AboutUs />} />
+				<Route path="/post" element={<PostPage />} />
+				<Route path="/home" element={<HomePage1 />} />
+				<Route path="/" element={<HomePage1 />} />
+				<Route path="/profile" element={<Profile />} />
+				<Route path="/settings" element={<Settings />} />
+				<Route path="/my-account" element={<MyAccountPage />} />
+				<Route path="/request" element={<RequestsPage />} />
+			</Routes>
+		</Router>
+	);
 }
 
 export default App;
