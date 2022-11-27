@@ -6,14 +6,15 @@ import HomePage1 from './pages/homepage1';
 import PostPage from './pages/PostPage';
 import Profile from './components/profile/profile';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from "./components/Navbar";
+//import Navbar from "./components/Navbar";
 import RequestsPage from "./pages/RequestsPage/requestsPage";
 import MyAccountPage from "./pages/MyAccountPage/myAccountPage";
+import NewNav from "./components/NewNav"
 
 function App() {
 	return (
 		<Router>
-			<Navbar />
+			<NewNav />
 			<Routes>
 				<Route path="/about" element={<AboutUs />} />
 				<Route path="/post" element={<PostPage />} />
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/request" element={<RequestsPage />} />
 			</Routes>
 		</Router>
+
 	);
 }
 
