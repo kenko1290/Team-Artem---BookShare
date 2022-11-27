@@ -18,10 +18,12 @@ function NewNav() {
                     >
                         <Nav.Link href="/about">About</Nav.Link>
                         <Nav.Link href="/home">Home</Nav.Link>
+                        <Nav.Link href="/post">Post</Nav.Link>
                         <Nav.Link href="/request">Request</Nav.Link>
                         <Nav.Link href="/my-account">My Account</Nav.Link>
                         <Nav.Link href="/profile">Profile</Nav.Link>
                         <Nav.Link href="/settings">Settings</Nav.Link>
+                        <Nav.Link href="/logout">Logout</Nav.Link>
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control
