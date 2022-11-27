@@ -1,6 +1,7 @@
 import React from "react"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
+import NewNav from "../../components/NewNav";
 
 let currentTab = "booksBorrowed";
 const books = [
@@ -38,6 +39,7 @@ const books = [
 export default function MyAccountPage(){
     const requestsPage = 
     <div>
+        <NewNav />
         <SideBar nav="myAccount"/>
         <BookInfoCardList bookList={books} tab={currentTab} />
     </div>

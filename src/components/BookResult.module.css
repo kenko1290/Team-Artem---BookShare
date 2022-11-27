@@ -1,7 +1,7 @@
 .image {
-  width: auto;
+  width: 50%;
   height: auto;
-  max-width: 110%;
+  max-width: 100%;
   overflow: hidden;
   border-top-right-radius: 6px;
   border-top-left-radius: 6px;

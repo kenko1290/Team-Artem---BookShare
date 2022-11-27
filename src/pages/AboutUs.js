@@ -1,6 +1,9 @@
+import NewNav from "../components/NewNav";
+
 export default function AboutUs() {
     return (
         <>
+            <NewNav/>
             <div class="about-section">
                 <h1>About Us Page</h1>
                 <p>Finding Books Easy</p>
