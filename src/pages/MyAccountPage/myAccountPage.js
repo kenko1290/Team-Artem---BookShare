@@ -1,8 +1,40 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
 
-let currentTab = "booksBorrowed";
+ 
+export default function MyAccountPage(){
+
+  const [booksBorrowed, setBooksBorrowed] = useState([]);
+  const [booksOwned, setBooksOwned] = useState([]);
+  const [booksLent, setBookslent] = useState([]);
+  const [tab, setTab] = useState("");
+
+  useEffect(() => {
+    const getData =  async () => {
+      const booksBorrowed = await fetch("/api/");
+      const booksOwned = await fetch("/api/");
+      const booksLent = await fetch("/api/")
+      setBooksBorrowed(booksBorrowed);
+      setBooksOwned(booksOwned);
+      setBookslent(booksLent);
+    };
+    getData();
+  }, []);
+
+  function handleTab(newTab){
+    setTab(newTab);
+  }
+  const requestsPage = 
+  <div>
+      <SideBar nav="myAccount" changeTab={handleTab} />
+      <BookInfoCardList bookBorrowedList={booksBorrowed} bookOwnedList={booksOwned} bookLentList={booksLent} currentTab={tab} />
+  </div>
+
+  return requestsPage;
+}
+
+/*let currentTab = "booksBorrowed";
 const books = [
   {
     id: 0,
@@ -33,14 +65,4 @@ const books = [
     profileImage: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
     profileName: "Average Joe3"
   }
-
-]
-export default function MyAccountPage(){
-    const requestsPage = 
-    <div>
-        <SideBar nav="myAccount"/>
-        <BookInfoCardList bookList={books} tab={currentTab} />
-    </div>
-
-    return requestsPage;
-}
+] */

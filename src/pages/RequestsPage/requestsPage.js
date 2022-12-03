@@ -1,9 +1,35 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
 
-let currentTab = "myRequests";
-const books = [
+export default function RequestsPage(){
+  const [myRequests, setMyRequests] = useState([]);
+  const [otherPeopleRequests, setOtherPeopleRequests] = useState([]);
+  const [tab, setTab] = useState("");
+
+  useEffect(() => {
+    const getData =  async () => {
+      const myRequests = await fetch("/api/myRequests/");
+      const otherPeopleRequests = await fetch("/api/otherPeopleRequests");
+      setMyRequests(myRequests);
+      setOtherPeopleRequests(otherPeopleRequests);
+    };
+    getData();
+  }, []);
+
+  function handleTab(newTab){
+    setTab(newTab);
+  }
+
+  const requestsPage = 
+  <div>
+      <SideBar nav="requests" changeTab={handleTab} />
+      <BookInfoCardList myRequestsList={myRequests} otherPeopleRequestsList={otherPeopleRequests} currentTab={tab} />
+  </div>
+  return requestsPage;
+}
+
+/* const books = [
   {
     id: 0,
     title: "Test Title1",
@@ -34,13 +60,4 @@ const books = [
     profileName: "Average Joe3"
   }
 
-]
-export default function RequestsPage(){
-    const requestsPage = 
-    <div>
-        <SideBar nav="requests"/>
-        <BookInfoCardList bookList={books} tab={currentTab} />
-    </div>
-
-    return requestsPage;
-}
+] */
