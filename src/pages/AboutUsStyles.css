@@ -65,8 +65,13 @@ html {
 
 .team-h2 {
     text-align: center;
+    padding-top: 10px;
 }
 
 .team-img {
-    width: 100%
+    width: 50%;
+}
+
+.names {
+    padding-top: 10px;
 }
