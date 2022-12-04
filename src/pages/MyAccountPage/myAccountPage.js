@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
+import axios from "axios";
 
  
 export default function MyAccountPage(){
@@ -8,30 +9,40 @@ export default function MyAccountPage(){
   const [booksBorrowed, setBooksBorrowed] = useState([]);
   const [booksOwned, setBooksOwned] = useState([]);
   const [booksLent, setBookslent] = useState([]);
-  const [tab, setTab] = useState("");
+  const [tab, setTab] = useState("booksBorrowed");
 
   useEffect(() => {
-    const getData =  async () => {
-      const booksBorrowed = await fetch("/api/");
-      const booksOwned = await fetch("/api/");
-      const booksLent = await fetch("/api/")
-      setBooksBorrowed(booksBorrowed);
-      setBooksOwned(booksOwned);
-      setBookslent(booksLent);
-    };
+    async function getData(){
+      try{
+        let booksBorrowedResponse = await axios.get("/api/");
+        let booksBorrowedData = booksBorrowedResponse.data;
+        setBooksBorrowed(booksBorrowedData);
+
+        let booksOwnedResponse = await axios.get("/api/");
+        let booksOwnedData = booksOwnedResponse.data;
+        setBooksOwned(booksOwnedData);
+
+        let booksLentResponse = await axios.get("/api/");
+        let booksLentData = booksLentResponse.data;
+        setBookslent(booksLent.data);
+
+      } catch (error) {
+        console.error("Error fetching");
+      }
+    }
     getData();
   }, []);
 
   function handleTab(newTab){
     setTab(newTab);
   }
-  const requestsPage = 
+  const myAccountPage = 
   <div>
       <SideBar nav="myAccount" changeTab={handleTab} />
       <BookInfoCardList bookBorrowedList={booksBorrowed} bookOwnedList={booksOwned} bookLentList={booksLent} currentTab={tab} />
   </div>
 
-  return requestsPage;
+  return myAccountPage;
 }
 
 /*let currentTab = "booksBorrowed";

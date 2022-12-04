@@ -36,19 +36,27 @@ function SideBar(props){
     }
 
     const requestsPageSideBar = 
-    
     <div className="sideBarContainer">
         <h5>Requests</h5>
         <button className="d-block" onClick={handleMyRequestsTabClick}> My Requests For Books</button>
         <button className="d-block" onClick={handleRequestsTabClick}> Requests For My Books  </button>
     </div>
     
+    function handleBooksBorrowedTabClick(){
+        props.changeTab("booksBorrowed");
+    }
+    function handleBooksOwnedTabClick(){
+        props.changeTab("booksOwned");
+    }
+    function handleBooksLentTabClick(){
+        props.changeTab("booksLent");
+    }
     const myAccountPageSideBar = 
     <div className="sideBarContainer">
         <h5>My Account</h5>
-        <button className="d-block">Boooks Burrowed</button>
-        <button className="d-block">Books Owned</button>
-        <button className="d-block">Books Lent</button>
+        <button className="d-block" onClick={handleBooksBorrowedTabClick}> Boooks Borrowed</button>
+        <button className="d-block" onClick={handleBooksOwnedTabClick}> Books Owned</button>
+        <button className="d-block" onClick={handleBooksLentTabClick}> Books Lent</button>
         <button className="d-block">Books Donated</button>
         <button className="d-block">Books Saved</button>
         <button className="d-block">Messages</button>

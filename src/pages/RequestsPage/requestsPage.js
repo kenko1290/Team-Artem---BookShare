@@ -1,26 +1,33 @@
 import React, {useState, useEffect} from "react"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
+import axios from "axios";
 
 export default function RequestsPage(){
   const [myRequests, setMyRequests] = useState([]);
   const [otherPeopleRequests, setOtherPeopleRequests] = useState([]);
-  const [tab, setTab] = useState("");
+  const [tab, setTab] = useState("myRequests");
 
   useEffect(() => {
-    const getData =  async () => {
-      const myRequests = await fetch("/api/myRequests/");
-      const otherPeopleRequests = await fetch("/api/otherPeopleRequests");
-      setMyRequests(myRequests);
-      setOtherPeopleRequests(otherPeopleRequests);
-    };
+    async function getData(){
+      try{
+        let myRequestsResponse = await axios.get("/api/myRequests/");
+        let myRequestsData = myRequestsResponse.data;
+        setMyRequests(myRequests);
+
+        let otherPeopleRequestsResponse = await axios.get("/api/otherPeopleRequests");
+        let otherPeopleRequestsData = otherPeopleRequestsResponse.data
+        setOtherPeopleRequests(otherPeopleRequests);
+      } catch (error) {
+        console.error("Error fetching");
+      }
+    }
     getData();
   }, []);
 
   function handleTab(newTab){
     setTab(newTab);
   }
-
   const requestsPage = 
   <div>
       <SideBar nav="requests" changeTab={handleTab} />

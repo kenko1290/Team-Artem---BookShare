@@ -139,7 +139,7 @@ function BookInfoCardList(props){
         )
     }
     
-    else if(props.currentTab === "booksBorrowed"){
+    else if(props.currentTab === "booksLent"){
         heading = myAccountHeading3;
         return (
             <ul className="listContainer">
