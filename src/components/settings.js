@@ -1,30 +1,30 @@
-function Settings(userInfo) {
+function Settings(props) {
 	return (
 		<div>
 			<div className="card">
 				<div class="card-body">
 					<p class="card-text">
-						Email: {userInfo.email} &nbsp;
+						Email: {props.userInfo.email} &nbsp;
 						<a href="/#">Change Email</a>
 					</p>
 					<p class="card-text">
-						Phone: {userInfo.phone} &nbsp;
+						Phone: {props.userInfo.phone} &nbsp;
 						<a href="/#">Change Phone Number</a>
 					</p>
 					<p class="card-text">
-						Username: {userInfo.username} &nbsp;
+						Username: {props.userInfo.username} &nbsp;
 						<a href="/#">Change Username</a>
 					</p>
 					<p class="card-text">
-						Password: {userInfo.password} &nbsp;
+						Password: {props.userInfo.password} &nbsp;
 						<a href="/#">Change Password</a>
 					</p>
 					<p class="card-text">
-						2FA: {userInfo.twofactorauth} &nbsp;
+						2FA: {props.userInfo.twofactorauth} &nbsp;
 						<a href="/#">Enable/Disable</a>
 					</p>
 					<p class="card-text">
-						Notifications: {userInfo.notify} &nbsp;
+						Notifications: {props.userInfo.notify} &nbsp;
 						<a href="/#">Enable/Disable</a>
 					</p>
 				</div>

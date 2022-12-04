@@ -1,30 +1,30 @@
-import user from "./user_info";
+//import user from "./user_info";
 
-function Profile() {
+function Profile(props) {
 	return (
 		<div className="card">
 			<div className="card-body">
 				<form className="profile-form">
 					<p>
-						<strong>First name: </strong> {user.fname}
+						<strong>First name: </strong> {props.userInfo.fname}
 					</p>
 
 					<p>
 						<strong>Last name: </strong>
-						{user.lname}
+						{props.userInfo.lname}
 					</p>
 
 					<p>
-						<strong>College: </strong> {user.college}
+						<strong>College: </strong> {props.userInfo.college}
 					</p>
 
 					<p>
-						<strong>Major: </strong> {user.major}
+						<strong>Major: </strong> {props.userInfo.major}
 					</p>
 
 					<p>
 						<strong>Year: </strong>
-						{user.year}
+						{props.userInfo.year}
 					</p>
 
 					<br></br>
@@ -32,7 +32,7 @@ function Profile() {
 					<p>
 						<strong>About Me:</strong>
 					</p>
-					<p>{user.about}</p>
+					<p>{props.userInfo.about}</p>
 				</form>
 			</div>
 		</div>
