@@ -57,7 +57,7 @@ function EditProfile() {
 		<div className="card">
 			<div className="card-body">
 				<p>Make Edits Below To Change Your Profile Looks</p>
-				<form className="profile-form" onSubmit={handleSaveChanges}>
+				<form className="profile-form">
 					<label htmlFor="fname">First name: </label>
 					<input type="text" id="fname" name="fname" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
 
@@ -110,7 +110,7 @@ function EditProfile() {
 						placeholder="I like coding..."
 						value={aboutMe} onChange={(e) => setAboutMe(e.target.value)}
 					></textarea>
-					<button>Save Changes</button>
+					<button onClick={handleSaveChanges}>Save Changes</button>
 				</form>
 				
 			</div>

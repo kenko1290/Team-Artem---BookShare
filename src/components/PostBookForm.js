@@ -28,7 +28,6 @@ function PostBookForm(props) {
       }
 
     }
-    console.log(content);
     async function PostBook(){
       try{
         await axios.post("/api/", content);
@@ -50,7 +49,7 @@ function PostBookForm(props) {
   return (
     <div class="container overflow-hidden">
       <div class="text-center fw-bold">Enter Book Information Below:</div>
-      <form onSubmit={handlePostButtonClick}>
+      <form>
         <div class="row mb-4">
           <div class="col-2 fw-bold">Book Image:</div>
           <button class="col-2">Add Image</button>

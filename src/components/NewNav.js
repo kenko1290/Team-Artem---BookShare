@@ -3,8 +3,23 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import axios from 'axios';
+import React, {useState} from 'react';
 
 function NewNav() {
+    const [searchValue, setSearchValue] = useState("");
+
+    function handleSearchButtonClick(){
+        async function search(){
+          try{
+            await axios.get("/api/");
+          } catch (error) {
+            console.error("Invalid username or password");
+          }
+        }
+        search();
+      };
+      
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
@@ -25,14 +40,16 @@ function NewNav() {
                         <Nav.Link href="/settings">Settings</Nav.Link>
                         <Nav.Link href="/logout">Logout</Nav.Link>
                     </Nav>
-                    <Form className="d-flex">
+                    <Form className="d-flex" >
                         <Form.Control
                             type="search"
                             placeholder="Find a book..."
                             className="me-2"
                             aria-label="Search"
+                            value={searchValue}
+                            onChange={(e) => setSearchValue(e.target.value)}
                         />
-                        <Button variant="outline-success">Search</Button>
+                        <Button variant="outline-success" onClick={handleSearchButtonClick}>Search</Button>
                     </Form>
                 </Navbar.Collapse>
             </Container>
