@@ -28,37 +28,38 @@ function SideBar(props){
         <button className="d-block">Donate Book</button>
     </div>
     
+    function handleMyRequestsTabClick(){
+        props.changeTab("myRequests");
+    }
+    function handleRequestsTabClick(){
+        props.changeTab("requests");
+    }
+
     const requestsPageSideBar = 
-    
     <div className="sideBarContainer">
-        <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasLabel">Requests</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <button className="d-block"> My Requests For Books</button>
-                <button className="d-block"> Requests For My Books  </button>
-            </div>
-        </div>  
+        <h5>Requests</h5>
+        <button className="d-block" onClick={handleMyRequestsTabClick}> My Requests For Books</button>
+        <button className="d-block" onClick={handleRequestsTabClick}> Requests For My Books  </button>
     </div>
     
+    function handleBooksBorrowedTabClick(){
+        props.changeTab("booksBorrowed");
+    }
+    function handleBooksOwnedTabClick(){
+        props.changeTab("booksOwned");
+    }
+    function handleBooksLentTabClick(){
+        props.changeTab("booksLent");
+    }
     const myAccountPageSideBar = 
     <div className="sideBarContainer">
-        <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasLabel">My Account</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <button className="d-block">Boooks Burrowed</button>
-                <button className="d-block">Books Owned</button>
-                <button className="d-block">Books Lent</button>
-                <button className="d-block">Books Donated</button>
-                <button className="d-block">Books Saved</button>
-                <button className="d-block">Messages</button>
-            </div>
-        </div>  
+        <h5>My Account</h5>
+        <button className="d-block" onClick={handleBooksBorrowedTabClick}> Boooks Borrowed</button>
+        <button className="d-block" onClick={handleBooksOwnedTabClick}> Books Owned</button>
+        <button className="d-block" onClick={handleBooksLentTabClick}> Books Lent</button>
+        <button className="d-block">Books Donated</button>
+        <button className="d-block">Books Saved</button>
+        <button className="d-block">Messages</button>
     </div>
 
     const bookPageSideBar = 
