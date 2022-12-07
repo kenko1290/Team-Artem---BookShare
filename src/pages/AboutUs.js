@@ -24,10 +24,9 @@ export default function AboutUs() {
                             <div class="container">
                                 <h2 className="names">Oumar Siby</h2>
                                 <p class="title">Software Developer</p>
-                                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                                <p>oumar@example.com</p>
-                                <p><button class="button">Contact</button></p>
-                            </div>
+                                <p>Responsible for the connection and fluency between the client and back end of the application</p>
+                                <p>omarcb1020@gmail.com</p>
+                                <p><a href="https://www.linkedin.com/in/oumarsiby/" target="_blank" rel="noreferrer"><button class="button">Contact</button></a></p>                            </div>
                         </div>
                     </Col>
 
@@ -36,9 +35,9 @@ export default function AboutUs() {
                             <div class="container">
                                 <h2 className="names">Ken Ko</h2>
                                 <p class="title">Software Developer</p>
-                                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                                <p>ken@example.com</p>
-                                <p><button class="button">Contact</button></p>
+                                <p>Programmed front-end functionality using React</p>
+                                <p>ken.ko1290@gmail.com</p>
+                                <p><a href="https://www.linkedin.com/in/koken/" target="_blank" rel="noreferrer"><button class="button">Contact</button></a></p>
                             </div>
                         </div>
                     </Col>
@@ -50,9 +49,9 @@ export default function AboutUs() {
                             <div class="container">
                                 <h2 className="names">WenBin Lin</h2>
                                 <p class="title">Software Developer</p>
-                                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                                <p>wenbin@example.com</p>
-                                <p><button class="button">Contact</button></p>
+                                <p>Developed back-end portion of application using SequelizeJS and React</p>
+                                <p>w1354685846@gmail.com</p>
+                                <p><a href="https://www.linkedin.com/in/wblin/" target="_blank" rel="noreferrer"><button class="button">Contact</button></a></p>
                             </div>
                         </div>
                     </Col>
@@ -62,9 +61,9 @@ export default function AboutUs() {
                             <div class="container">
                                 <h2 className="names">Shahjalal Sikder</h2>
                                 <p class="title">Software Developer</p>
-                                <p>Developed client side program using React and Bootstrap.</p>
+                                <p>Worked on client side of application using React and Bootstrap</p>
                                 <p>shah.sikder55@gmail.com</p>
-                                <p><button class="button">Contact</button></p>
+                                <p><a href="https://www.linkedin.com/in/shahjalal-sikder-465636176/" target="_blank" rel="noreferrer"><button class="button">Contact</button></a></p>
                             </div>
                         </div>
                     </Col>
