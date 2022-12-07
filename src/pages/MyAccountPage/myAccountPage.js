@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
+import NewNav from "../../components/NewNav";
 import axios from "axios";
 
  
