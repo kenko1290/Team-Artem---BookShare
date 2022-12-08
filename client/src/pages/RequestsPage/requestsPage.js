@@ -1,10 +1,42 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
-import NewNav from "../../components/NewNav";
+import axios from "axios";
 
-let currentTab = "booksBorrowed";
-const books = [
+export default function RequestsPage(){
+  const [myRequests, setMyRequests] = useState([]);
+  const [otherPeopleRequests, setOtherPeopleRequests] = useState([]);
+  const [tab, setTab] = useState("myRequests");
+
+  useEffect(() => {
+    async function getData(){
+      try{
+        let myRequestsResponse = await axios.get("/api/myRequests/");
+        let myRequestsData = myRequestsResponse.data;
+        setMyRequests(myRequests);
+
+        let otherPeopleRequestsResponse = await axios.get("/api/otherPeopleRequests");
+        let otherPeopleRequestsData = otherPeopleRequestsResponse.data
+        setOtherPeopleRequests(otherPeopleRequests);
+      } catch (error) {
+        console.error("Error fetching");
+      }
+    }
+    getData();
+  }, []);
+
+  function handleTab(newTab){
+    setTab(newTab);
+  }
+  const requestsPage = 
+  <div>
+      <SideBar nav="requests" changeTab={handleTab} />
+      <BookInfoCardList myRequestsList={myRequests} otherPeopleRequestsList={otherPeopleRequests} currentTab={tab} />
+  </div>
+  return requestsPage;
+}
+
+/* const books = [
   {
     id: 0,
     title: "Test Title1",
@@ -35,14 +67,4 @@ const books = [
     profileName: "Average Joe3"
   }
 
-]
-export default function MyAccountPage(){
-    const requestsPage = 
-    <div>
-        <NewNav />
-        <SideBar nav="myAccount"/>
-        <BookInfoCardList bookList={books} tab={currentTab} />
-    </div>
-
-    return requestsPage;
-}
+] */
