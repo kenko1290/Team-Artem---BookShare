@@ -1,11 +1,18 @@
 import { readString } from "react-papaparse";
 import collegesCSV from "./colleges.csv";
 import majorsCSV from "./majors.csv"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function EditProfile() {
 	const [UniData, setUniData] = useState([]);
 	const [MajorData, setMajorData] = useState([]);
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [college, setCollege] = useState("");
+	const [major, setMajor] = useState("");
+	const [year, setYear] = useState("");
+	const [aboutMe, setAboutMe] = useState("");
 
 	const UniConfig = {
 		header: true,
@@ -31,23 +38,38 @@ function EditProfile() {
 	readString(majorsCSV, MajorConfig);
 	readString(collegesCSV, UniConfig);
 
+	
+  function handleSaveChanges(event){
+	let profileChanges = {
+		firstName, lastName, college, major, year, aboutMe
+	};
+	async function saveChanges(){
+		try{
+		  await axios.post("/api/", profileChanges);
+		} catch (error) {
+		  console.error("Error posting");
+		}
+	  }
+	  saveChanges();
+  	};
+
 	return (
 		<div className="card">
 			<div className="card-body">
 				<p>Make Edits Below To Change Your Profile Looks</p>
 				<form className="profile-form">
 					<label htmlFor="fname">First name: </label>
-					<input type="text" id="fname" name="fname"></input>
+					<input type="text" id="fname" name="fname" value={firstName} onChange={(e) => setFirstName(e.target.value)}></input>
 
 					<br></br>
 
 					<label htmlFor="lname">Last name: </label>
-					<input type="text" id="lname" name="lname"></input>
+					<input type="text" id="lname" name="lname" value={lastName} onChange={(e) => setLastName(e.target.value)}></input>
 
 					<br></br>
 
 					<label htmlFor="college">College: </label>
-					<input list="college" />
+					<input list="college" value={college} onChange={(e) => setCollege(e.target.value)}/>
 					<datalist id="college">
 						{UniData.map((college,key) => (
 							<option key={key} value={college}></option>
@@ -57,7 +79,7 @@ function EditProfile() {
 					<br></br>
 
 					<label htmlFor="major">Major: </label>
-					<input list="major" />
+					<input list="major" value={major} onChange={(e) => setMajor(e.target.value)}/>
 					<datalist id="major">
 						{MajorData.map((major, key) => (
 							<option key={key} value={major}></option>
@@ -67,7 +89,7 @@ function EditProfile() {
 					<br></br>
 
 					<label htmlFor="year">Year: </label>
-					<input list="year" />
+					<input list="year" value={year} onChange={(e) => setYear(e.target.value)}/>
 					<datalist id="year">
 						<option value="Freshman"></option>
 						<option value="Sophomore"></option>
@@ -86,8 +108,11 @@ function EditProfile() {
 						rows="3"
 						cols="30"
 						placeholder="I like coding..."
+						value={aboutMe} onChange={(e) => setAboutMe(e.target.value)}
 					></textarea>
+					<button onClick={handleSaveChanges}>Save Changes</button>
 				</form>
+				
 			</div>
 		</div>
 	);
