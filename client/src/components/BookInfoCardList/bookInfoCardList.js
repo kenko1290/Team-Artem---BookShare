@@ -2,7 +2,6 @@ import BookInfoCard from "../BookInfoCard/bookInfoCard";
 import "./bookInfoCardList.css"
 import React from "react";
 
-
 function BookInfoCardList(props){
     const myRequestsHeading = 
     <div className="container text-center">

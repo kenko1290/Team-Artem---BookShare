@@ -1,5 +1,5 @@
 //import user from "./user_info";
-
+import React from 'react'
 function Profile(props) {
 	return (
 		<div className="card">

@@ -1,3 +1,4 @@
+import React from 'react'
 import NewNav from "../components/NewNav";
 
 export default function AboutUs() {

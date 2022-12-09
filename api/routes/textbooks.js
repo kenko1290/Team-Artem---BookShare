@@ -19,7 +19,7 @@ router.get('/', ash(async(req, res) => {
 
 
 /** GET TEXTBOOK BY ID */
-router.get('/:id', ash(async(req, res) => {
+router.get('/myRequests', ash(async(req, res) => {
   let textbook = await Textbook.findByPk(req.params.id);
   res.status(200).json(textbook);
 }));

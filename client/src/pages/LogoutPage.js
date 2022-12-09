@@ -1,3 +1,4 @@
+import React from 'react'
 import SmallNav from "../components/smallNav";
 
 export default function LogoutPage() {

@@ -11,7 +11,7 @@ export default function RequestsPage(){
   useEffect(() => {
     async function getData(){
       try{
-        let myRequestsResponse = await axios.get("/api/myRequests/");
+        let myRequestsResponse = await axios.get("/api/textbooks/myRequests/");
         let myRequestsData = myRequestsResponse.data;
         setMyRequests(myRequests);
 
