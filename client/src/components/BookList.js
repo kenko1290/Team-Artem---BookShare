@@ -1,8 +1,9 @@
+import React from 'react'
 import BookResult from "./BookResult";
 import classes from "./BookList.module.css";
 
 function BookList(props) {
-  /*const books = [
+  const books = [
     {
       id: "1",
       title: "Computer Organization and Design, MIPS Edition",
@@ -44,13 +45,13 @@ function BookList(props) {
       time: "2:00pm",
       image: "https://m.media-amazon.com/images/I/51Qy2upM+aL._SY344_BO1,204,203,200_.jpg",
     },
-  ]; */
+  ]; 
   
   return (
     <div>
       <h4>Search Results</h4>
       <ul className={classes.list}>
-        {props.BookList.map((book) => {
+        {books.map((book) => {
           return (
             <BookResult
               key={book.id}

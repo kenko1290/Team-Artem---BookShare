@@ -1,3 +1,4 @@
+import React from 'react'
 import "./App.css";
 // import EditProfile from "./edit_profile/edit_profile";
 import AboutUs from './pages/AboutUs';
@@ -11,6 +12,7 @@ import SignupPage from "./pages/SignupPage";
 import LogoutPage from "./pages/LogoutPage";
 import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./pages/ProfilePage";
+
 
 function App() {
 	return (

@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, {useState, useEffect} from "react";
+import React, {useState } from "react";
 
 function PostBookForm(props) {
+  const [image, setImage] = useState("");
   const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
   const [Summary, setSummary] = useState("");
   const [ISBN, setISBN] = useState("");
   const [edition, setEdition] = useState("");
@@ -19,18 +21,18 @@ function PostBookForm(props) {
     let content = {};
     if(props.currentTab === "lendBook"){
       content = {
-        title, Summary, ISBN, edition, format, subject, pickup: {date1, location1, time1}, return: {date2, location2, time2}, sharingType: "lending"
+        image, title, author, Summary, ISBN, edition, format, subject, date1, location1, time1, date2, location2, time2, sharingType: "lending"
       }
 
     } else {
       content = {
-        title, Summary, ISBN, edition, format, subject, pickup: {date1, location1, time1}, return: {date2, location2, time2}, sharingType: "donating"
+        image, title, author, Summary, ISBN, edition, format, subject, date1, location1, time1, date2, location2, time2, sharingType: "donating"
       }
 
     }
     async function PostBook(){
       try{
-        await axios.post("/api/", content);
+        await axios.post("/api/textbooks", content);
       } catch (error) {
         console.error("Error posting");
       }
@@ -52,12 +54,17 @@ function PostBookForm(props) {
       <form>
         <div class="row mb-4">
           <div class="col-2 fw-bold">Book Image:</div>
-          <button class="col-2">Add Image</button>
+          <input class="col-3" type="file" name="image" value={image} onChange={(e) => setImage(e.target.value)}/>
           <div class="col-8"></div>
         </div>
         <div class="row mb-4">
           <div class="col-2 fw-bold">Book Title:</div>
-          <input class="col-4 bg-light" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input class="col-4 bg-light" type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <div class="col-6"></div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-2 fw-bold">Author:</div>
+          <input class="col-4 bg-light" type="text" name="author" value={author} onChange={(e) => setAuthor(e.target.value)}/>
           <div class="col-6"></div>
         </div>
         <div class="row">
@@ -82,8 +89,9 @@ function PostBookForm(props) {
         </div>
         <div class="row">
           <div class="col-2">Format:</div>
-          <input type="checkbox" class="col-2 bg-light" onClick={setHardcover}/>Hardcover
-          <input type="checkbox" class="col-2 bg-light" onClick={setPapercover}/>Papercover
+          <input type="checkbox" class="col-1 bg-light" onClick={setHardcover}/>Hardcover
+          <div class="col"></div>
+          <input type="checkbox" class="col-1 bg-light" onClick={setPapercover}/>Papercover
           <div class="col-6"></div>
         </div>
         <div class="row mb-4">
