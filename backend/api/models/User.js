@@ -1,57 +1,63 @@
-const { Model } = require("sequelize");
+const { Model, col } = require("sequelize");
 const bcrypt = require("bcryptjs");
 
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
-    getFullname() {
-      return [this.firstName, this.lastName].join(" ");
-    }
-  }
+	class User extends Model {
+		getFullname() {
+			return [this.firstName, this.lastName].join(" ");
+		}
+	}
 
-  User.init(
-    {
-      firstName: { type: DataTypes.STRING },
-      lastName: { type: DataTypes.STRING },
-      email: {
-        type: DataTypes.STRING,
-        unique: true,
-        allowNull: false,
-        validate: {
-          isEmail: true,
-        },
-      },
-      passwordHash: { type: DataTypes.STRING },
-      password: {
-        type: DataTypes.VIRTUAL,
-        validate: {
-          isLongEnough: (val) => {
-            if (val.length < 7) {
-              throw new Error("Please choose a longer password");
-            }
-          },
-        },
-      },
-      // add College, Major, Year, About Me fields
-      college: { type: DataTypes.STRING },
-      major: { type: DataTypes.STRING },
-      year: { type: DataTypes.STRING },
-      aboutMe: { type: DataTypes.STRING },
-    },
-    {
-      sequelize,
-      modelName: "User",
-    }
-  );
+	User.init(
+		{
+			firstName: { type: DataTypes.STRING },
+			lastName: { type: DataTypes.STRING },
+			email: {
+				type: DataTypes.STRING,
+				unique: true,
+				allowNull: false,
+				validate: {
+					isEmail: true,
+				},
+			},
+			passwordHash: { type: DataTypes.STRING },
+			password: {
+				type: DataTypes.VIRTUAL,
+				validate: {
+					isLongEnough: (val) => {
+						if (val.length < 7) {
+							throw new Error("Please choose a longer password");
+						}
+					},
+				},
+			},
 
-  User.associate = (models) => {
-    // associations can be defined here
-  };
+			college: { type: DataTypes.STRING, allowNull: true },
+			major: { type: DataTypes.STRING, allowNull: true },
+			year: { type: DataTypes.STRING, allowNull: true },
+			aboutMe: { type: DataTypes.STRING, allowNull: true },
+			phoneNumber: { type: DataTypes.STRING, allowNull: true },
+		},
+		{
+			sequelize,
+			modelName: "User",
+		}
+	);
 
-  User.beforeSave((user, options) => {
-    if (user.password) {
-      user.passwordHash = bcrypt.hashSync(user.password, 10);
-    }
-  });
+	User.associate = (models) => {
+		// associations can be defined here
+		// user belongs to micropost through micropost's ownerID
+		User.hasMany(models.Textbook, {
+			foreignKey: "ownerID",
+			as: "textbooks",
+		});
+	};
 
-  return User;
+	User.beforeSave((user, options) => {
+		if (user.password) {
+			user.passwordHash = bcrypt.hashSync(user.password, 10);
+		}
+	});
+
+	return User;
 };

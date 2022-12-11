@@ -1,42 +1,44 @@
-// model for posted textbooks, has the type of sharing(true for lending, false for donating)
-// book image, book title, book author, book summary, book edition,
-// book isbn,  book owner, book format(true for hardcover otherwise papercover),
-// subject, pick up date, pick up location, pick up time, return date
-// return time, return location, book status(true for available, false for unavailable)
-
 "use strict";
 const { Model } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
-	class PostedTextbook extends Model {
-		static associate(models) {
-			// define association here
-		}
-	}
-	PostedTextbook.init(
+	class Textbook extends Model {}
+
+	Textbook.init(
 		{
 			typeOfSharing: { type: DataTypes.BOOLEAN }, // lending = true or donating = false
-			bookImage: { type: DataTypes.STRING },
+			bookImage: { type: DataTypes.BLOB, allowNull: true},
 			bookTitle: { type: DataTypes.STRING },
-			bookAuthor: { type: DataTypes.STRING },
-			bookSummary: { type: DataTypes.STRING },
-			bookEdition: { type: DataTypes.STRING },
-			bookISBN: { type: DataTypes.STRING },
-			bookOwner: { type: DataTypes.STRING },
+			bookAuthor: { type: DataTypes.STRING, allowNull: true },
+			bookSummary: { type: DataTypes.STRING, allowNull: true },
+			bookEdition: { type: DataTypes.STRING, allowNull: true },
+			bookISBN: { type: DataTypes.STRING, allowNull: true },
+			ownerID: { type: DataTypes.INTEGER, allowNull: true },
 			bookFormat: { type: DataTypes.BOOLEAN }, // hardcover = true, papercover = false
-			subject: { type: DataTypes.STRING },
-			pickUpDate: { type: DataTypes.STRING },
-			pickUpLocation: { type: DataTypes.STRING },
-			pickUpTime: { type: DataTypes.STRING },
-			returnDate: { type: DataTypes.STRING },
-			returnTime: { type: DataTypes.STRING },
-			returnLocation: { type: DataTypes.STRING },
-			bookStatus: { type: DataTypes.BOOLEAN }, // avaliable or not avaliable
+			subject: { type: DataTypes.STRING, allowNull: true },
+			pickUpDate: { type: DataTypes.STRING, allowNull: true },
+			pickUpLocation: { type: DataTypes.STRING, allowNull: true },
+			pickUpTime: { type: DataTypes.STRING, allowNull: true },
+			returnDate: { type: DataTypes.STRING, allowNull: true },
+			returnTime: { type: DataTypes.STRING, allowNull: true },
+			returnLocation: { type: DataTypes.STRING, allowNull: true },
+            //bookStatus, boolean (avaliable or not avaliable), default true
+			bookStatus: { type: DataTypes.BOOLEAN, defaultValue: true },
 		},
 		{
 			sequelize,
-			modelName: "PostedTextbook",
+			modelName: "Textbook",
 		}
 	);
-	return PostedTextbook;
+
+	Textbook.associate = (models) => {
+		// associations can be defined here
+		// user belongs to Textbook through Textbook's ownerID
+		Textbook.belongsTo(models.User, {
+			foreignKey: "ownerID",
+			as: "owner",
+		});
+	};
+
+	return Textbook;
 };

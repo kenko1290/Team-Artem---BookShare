@@ -9,11 +9,6 @@ router.post("/signup", (req, res) => {
     lastName: req.body.lastName,
     email: req.body.email,
     password: req.body.password,
-    college: req.body.college,
-    major: req.body.major,
-    year: req.body.year,
-    aboutMe: req.body.aboutMe,
-
   })
     .then((user) => {
       user.password = undefined;
