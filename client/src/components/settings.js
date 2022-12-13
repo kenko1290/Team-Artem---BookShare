@@ -1,32 +1,32 @@
 import React from 'react'
 
-function Settings(props) {
+function Settings(userInfo) {
 	return (
 		<div>
 			<div className="card">
 				<div class="card-body">
 					<p class="card-text">
-						Email: {props.userInfo.email} &nbsp;
+						Email: {userInfo.email} &nbsp;
 						<a href="/#">Change Email</a>
 					</p>
 					<p class="card-text">
-						Phone: {props.userInfo.phone} &nbsp;
+						Phone: {userInfo.phone} &nbsp;
 						<a href="/#">Change Phone Number</a>
 					</p>
 					<p class="card-text">
-						Username: {props.userInfo.username} &nbsp;
+						Username: {userInfo.username} &nbsp;
 						<a href="/#">Change Username</a>
 					</p>
 					<p class="card-text">
-						Password: {props.userInfo.password} &nbsp;
+						Password: {userInfo.password} &nbsp;
 						<a href="/#">Change Password</a>
 					</p>
 					<p class="card-text">
-						2FA: {props.userInfo.twofactorauth} &nbsp;
+						2FA: {userInfo.twofactorauth} &nbsp;
 						<a href="/#">Enable/Disable</a>
 					</p>
 					<p class="card-text">
-						Notifications: {props.userInfo.notify} &nbsp;
+						Notifications: {userInfo.notify} &nbsp;
 						<a href="/#">Enable/Disable</a>
 					</p>
 				</div>

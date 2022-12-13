@@ -1,4 +1,4 @@
-//import user from "./user_info";
+import user from "./user_info";
 import React from 'react'
 function Profile(props) {
 	return (
@@ -6,25 +6,25 @@ function Profile(props) {
 			<div className="card-body">
 				<form className="profile-form">
 					<p>
-						<strong>First name: </strong> {props.userInfo.fname}
+						<strong>First name: </strong> {user.fname}
 					</p>
 
 					<p>
 						<strong>Last name: </strong>
-						{props.userInfo.lname}
+						{user.lname}					
+						</p>
+
+					<p>
+						<strong>College: </strong> {user.college}
 					</p>
 
 					<p>
-						<strong>College: </strong> {props.userInfo.college}
-					</p>
-
-					<p>
-						<strong>Major: </strong> {props.userInfo.major}
+						<strong>Major: </strong> {user.major}
 					</p>
 
 					<p>
 						<strong>Year: </strong>
-						{props.userInfo.year}
+						{user.year}
 					</p>
 
 					<br></br>
@@ -32,7 +32,7 @@ function Profile(props) {
 					<p>
 						<strong>About Me:</strong>
 					</p>
-					<p>{props.userInfo.about}</p>
+					<p>{user.about}</p>
 				</form>
 			</div>
 		</div>

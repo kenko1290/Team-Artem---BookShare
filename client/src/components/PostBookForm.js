@@ -54,7 +54,7 @@ function PostBookForm(props) {
       <form>
         <div class="row mb-4">
           <div class="col-2 fw-bold">Book Image:</div>
-          <input class="col-3" type="file" name="image" value={image} onChange={(e) => setImage(e.target.value)}/>
+          <input class="col-3" type="text" name="image" value={image} onChange={(e) => setImage(e.target.value)}/>
           <div class="col-8"></div>
         </div>
         <div class="row mb-4">
@@ -130,7 +130,7 @@ function PostBookForm(props) {
       </form>
       <div class="row">
         <div class="col-4"></div>
-        <button class="col-2" onClick={handlePostButtonClick}>Post Book</button>
+        <button class="col-2" onClick={handlePostButtonClick}><a href="/">Post Book</a></button>
         <div class="col"></div>
       </div>
     </div>

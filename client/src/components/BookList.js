@@ -6,6 +6,19 @@ function BookList(props) {
   const books = [
     {
       id: "1",
+      title: "Eloquent JavaScript",
+      author: "Marijn Haverbeke",
+      edition: "3rd",
+      format: "Physical",
+      sharing: "donated",
+      availability: "Available",
+      location: "Hunter",
+      date: "01/22/23",
+      time: "01:00pm",
+      image: "https://m.media-amazon.com/images/I/51InjRPaF7L._AC_SY780_.jpg",
+    },
+    {
+      id: "1",
       title: "Computer Organization and Design, MIPS Edition",
       author: "David A. Patterson & John L. Hennessy",
       edition: "6th",
@@ -53,7 +66,8 @@ function BookList(props) {
       <ul className={classes.list}>
         {books.map((book) => {
           return (
-            <BookResult
+            <a href='/book'>
+            <BookResult  
               key={book.id}
               title={book.title}
               author={book.author}
@@ -66,6 +80,7 @@ function BookList(props) {
               time={book.time}
               image={book.image}
             />
+            </a>
           );
         })}
       </ul>

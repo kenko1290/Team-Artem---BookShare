@@ -46,10 +46,50 @@ function BookInfoCardList(props){
 
     let heading;
 
-    if(props.tab === "myRequests")
+    if(props.tab === "myRequests"){
         heading = myRequestsHeading;
-    else if(props.tab === "requests")
+        return (
+            <ul className="listContainer">
+                {heading}
+                {props.myRequests.map((book) => {
+                    return (
+                        <BookInfoCard
+                            key={book.id}  
+                            title={book.title}
+                            author={book.author}
+                            bookImage={book.bookImage}
+                            date={book.date}
+                            profileImage={book.profileImage}
+                            profileName={book.profileName}
+                            tab={props.tab}
+                        />
+                    )
+                })}
+            </ul>
+        )
+    }
+    else if(props.tab === "requests"){
         heading = requestsHeading;
+        return (
+            <ul className="listContainer">
+                {heading}
+                {props.otherPeopleRequests.map((book) => {
+                    return (
+                        <BookInfoCard
+                            key={book.id}  
+                            title={book.title}
+                            author={book.author}
+                            bookImage={book.bookImage}
+                            date={book.date}
+                            profileImage={book.profileImage}
+                            profileName={book.profileName}
+                            tab={props.tab}
+                        />
+                    )
+                })}
+            </ul>
+        )
+    }
     else if(props.tab ==="booksDonated" || props.tab ==="booksSaved")
         heading = myAccountHeading1;
     else if(props.tab === "booksOwned")
@@ -58,7 +98,6 @@ function BookInfoCardList(props){
         heading = myAccountHeading3;
     else
         heading = "";
-
 
     return (
         <ul className="listContainer">
@@ -79,6 +118,7 @@ function BookInfoCardList(props){
             })}
         </ul>
     )
+
 }
 
 export default BookInfoCardList;
