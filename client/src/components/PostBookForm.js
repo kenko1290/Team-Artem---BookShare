@@ -10,8 +10,8 @@ function PostBookForm(props) {
   const [edition, setEdition] = useState("");
   const [format, setFormat] = useState("");
   const [subject, setSubject] = useState("");
-  const [date1, setData1] = useState("");
-  const [date2, setData2] = useState("");
+  const [date1, setDate1] = useState("");
+  const [date2, setDate2] = useState("");
   const [location1, setLocation1] = useState("");
   const [location2, setLocation2] = useState("");
   const [time1, setTime1] = useState("");
@@ -38,6 +38,20 @@ function PostBookForm(props) {
       }
     }
     PostBook();
+    setImage("");
+    setTitle("");
+    setAuthor("");
+    setSummary("");
+    setISBN("");
+    setEdition("");
+    setFormat("");
+    setSubject("");
+    setDate1("");
+    setDate2("");
+    setTime1("");
+    setTime2("");
+    setLocation1("");
+    setLocation2("");
   };
 
   function setHardcover(){
@@ -108,10 +122,10 @@ function PostBookForm(props) {
         </div>
         <div class="row">
           <div class="col-1">Date:</div>
-          <input class="col-3 bg-light" type="text" value={date1} onChange={(e) => setData1(e.target.value)}/>
+          <input class="col-3 bg-light" type="text" value={date1} onChange={(e) => setDate1(e.target.value)}/>
           <div class="col-2"></div>
           <div class="col-1">Date:</div>
-          <input class="col-3 bg-light" type="text" value={date2} onChange={(e) => setData2(e.target.value)}/>
+          <input class="col-3 bg-light" type="text" value={date2} onChange={(e) => setDate2(e.target.value)}/>
         </div>
         <div class="row">
           <div class="col-1">Location:</div>
