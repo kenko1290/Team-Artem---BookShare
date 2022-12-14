@@ -50,7 +50,7 @@ export default function AboutUs() {
                                 <h2 className="names">WenBin Lin</h2>
                                 <p class="title">Software Developer</p>
                                 <p>Developed back-end portion of application using SequelizeJS and React</p>
-                                <p>w1354685846@gmail.com</p>
+                                <p>wblin2986@gmail.com</p>
                                 <p><a href="https://www.linkedin.com/in/wblin/" target="_blank" rel="noreferrer"><button class="button">Contact</button></a></p>
                             </div>
                         </div>
