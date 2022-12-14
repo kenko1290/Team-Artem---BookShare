@@ -66,9 +66,13 @@ const books2 = [
 ]
   const requestsPage = 
   <div>
-      <NewNav />
-      <SideBar nav="requests" changeTab={handleTab} />
-      <BookInfoCardList myRequests={books1} otherPeopleRequests={books2} tab={tab} />
+    <NewNav />
+    <div class="container-fluid">
+      <div class="row mb-4">
+        <div class="col-2 fw-bold border border-dark border-bottom-0 border-top-0 border-bottom-right-0"><SideBar nav="requests" changeTab={handleTab} /></div>
+        <div class="col" style={{paddingTop:"10px"}}>{<BookInfoCardList myRequests={books1} otherPeopleRequests={books2} tab={tab}/>}</div>
+      </div>
+    </div>
   </div>
   return requestsPage;
 }
