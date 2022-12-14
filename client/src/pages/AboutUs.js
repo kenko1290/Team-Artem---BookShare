@@ -35,7 +35,7 @@ export default function AboutUs() {
                             <div class="container">
                                 <h2 className="names">Ken Ko</h2>
                                 <p class="title">Software Developer</p>
-                                <p>Programmed front-end functionality using React</p>
+                                <p>Programmed front-end functionality using React and developed back-end controller for textbook data</p>
                                 <p>ken.ko1290@gmail.com</p>
                                 <p><a href="https://www.linkedin.com/in/koken/" target="_blank" rel="noreferrer"><button class="button">Contact</button></a></p>
                             </div>
