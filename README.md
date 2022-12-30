@@ -11,7 +11,7 @@ Book Share is a full stack application built by
 [Ken Ko](https://github.com/kenko1290) : ken.ko1290@gmail.com
 
 
-The site is currently deployed [here:](https://team-artem-book-share.netlify.app/)
+The site is currently deployed [here](https://team-artem-book-share.netlify.app/):
 
 https://team-artem-book-share.netlify.app/
 
