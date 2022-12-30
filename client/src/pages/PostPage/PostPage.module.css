@@ -1,0 +1,27 @@
+.main {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.mapcontainer {
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	top: 175px;
+	left: 46rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.listheading {
+	width: 600px;
+	position: relative;
+	top: -1rem;
+	right: 1rem;
+}
+.studylist {
+	width: 1150px;
+	height: 40rem;
+	position: absolute;
+	top: 10rem;
+	right: 14rem;
+}
