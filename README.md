@@ -1,12 +1,15 @@
 ### 📕📗📘📙 Book Share 
 
 Book Share is a full stack application built by 
+
 [WenBin Lin](https://github.com/wenbin1354) : wblin2986@gmail.com 
+
 [Oumar S.](https://github.com/oumar-s) : omarcb1020@gmail.com 
+
 [Shahjalal Sikder](https://github.com/Shah55) : shah.sikder55@gmail.com 
+
 [Ken Ko](https://github.com/kenko1290) : ken.ko1290@gmail.com
 
-It is currently deployed [here]()
 
 
 ### ✨ Description 
