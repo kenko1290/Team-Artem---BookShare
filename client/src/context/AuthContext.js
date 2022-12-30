@@ -29,7 +29,7 @@ const AuthProvider = ({ children }) => {
 		return () => {
 			// clean up function
 		};
-	}, []);
+	}, [user]);
 
 	const authenticate = async (email, password) => {
 		let response = await fetch("/api/auth/login", {
