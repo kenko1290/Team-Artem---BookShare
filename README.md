@@ -11,6 +11,9 @@ Book Share is a full stack application built by
 [Ken Ko](https://github.com/kenko1290) : ken.ko1290@gmail.com
 
 
+The site is currently deployed [here:](https://team-artem-book-share.netlify.app/)
+
+https://team-artem-book-share.netlify.app/
 
 ### ✨ Description 
 `Book Share` is a full stack CRUD application that allows users to share books with each other. Users can create an account, search for books, and request to borrow books from other users. Users can also accept or decline requests to borrow their books.
@@ -77,6 +80,7 @@ npm start
 - [ ] Add edit settings functionality
 - [ ] Add privacy settings
 - [ ] Add image support
+- [ ] Server might crash
 #### Bugs
 - [ ] User can make multiple requests to a single textbook
 - [ ] User can make requests to their own textbook
