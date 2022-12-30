@@ -80,8 +80,9 @@ npm start
 #### Bugs
 - [ ] User can make multiple requests to a single textbook
 - [ ] User can make requests to their own textbook
-- [ ] Saving changes to profile doesn't reflect immediately, requires User to refresh the page
+- [x] Saving changes to profile doesn't reflect immediately, requires User to refresh the page
 - [ ] Laggy forms
+- [ ] Changing tabs sometimes redirects you to the login page
 
 ### 🤝 Contributing
 If you want to contribute to this project, we are very happy to welcome.
