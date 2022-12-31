@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import './index.css';
 import App from './App';
-import "./components/Navbar/navStyles.css"
-import './pages/HomePage/homepage1Styles.css';
-import './pages/AboutUsPage/AboutUsStyles.css'
+import "./components/navStyles.css"
+import './pages/homepage1Styles.css';
+import './components/smallNavStyles.css';
+import './pages/AboutUsStyles.css'
 
 // Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.css';
