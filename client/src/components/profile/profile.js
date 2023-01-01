@@ -1,6 +1,6 @@
 import user from "./user_info";
-
-function Profile() {
+import React from 'react'
+function Profile(props) {
 	return (
 		<div className="card">
 			<div className="card-body">
@@ -11,8 +11,8 @@ function Profile() {
 
 					<p>
 						<strong>Last name: </strong>
-						{user.lname}
-					</p>
+						{user.lname}					
+						</p>
 
 					<p>
 						<strong>College: </strong> {user.college}

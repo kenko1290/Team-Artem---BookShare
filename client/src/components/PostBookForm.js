@@ -1,70 +1,77 @@
-//import { getAllTextbooks, createTextbook } from "./services/textbookService";
-import { createTextbook } from "./services/textbookService";
-import { useState } from 'react';
+import axios from "axios";
+import React, {useState } from "react";
 
-/*
-function printAllTextbooks() {
-  getAllTextbooks()
-    .then(textbook => {
-      console.log(textbook)
-    });
-}*/
+function PostBookForm(props) {
+  const [image, setImage] = useState("");
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [Summary, setSummary] = useState("");
+  const [ISBN, setISBN] = useState("");
+  const [edition, setEdition] = useState("");
+  const [format, setFormat] = useState("");
+  const [subject, setSubject] = useState("");
+  const [date1, setData1] = useState("");
+  const [date2, setData2] = useState("");
+  const [location1, setLocation1] = useState("");
+  const [location2, setLocation2] = useState("");
+  const [time1, setTime1] = useState("");
+  const [time2, setTime2] = useState("");
 
-function PostBookForm() {
-  const [inputs, setInputs] = useState({}); // used for keeping track of all the inputs on the form
+  function handlePostButtonClick(){
+    let content = {};
+    if(props.currentTab === "lendBook"){
+      content = {
+        image, title, author, Summary, ISBN, edition, format, subject, date1, location1, time1, date2, location2, time2, sharingType: "lending"
+      }
 
-  const handleChange = (event) => { // updates inputs whenever something is entered into the form
-    const name = event.target.name;
-    const value = event.target.value;
-    setInputs(values => ({...values, [name]: value}))
+    } else {
+      content = {
+        image, title, author, Summary, ISBN, edition, format, subject, date1, location1, time1, date2, location2, time2, sharingType: "donating"
+      }
+
+    }
+    async function PostBook(){
+      try{
+        await axios.post("/api/textbooks", content);
+      } catch (error) {
+        console.error("Error posting");
+      }
+    }
+    PostBook();
+  };
+
+  function setHardcover(){
+    setFormat("Hardcover");
   }
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(inputs);
-    createTextbook(inputs)  // pass form inputs to createTextbook function
-    setInputs({}); // clear form of inputs after submitting
- }
+  function setPapercover(){
+    setFormat("Papercover");
+  }
+  
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div class="container overflow-hidden">
-        <div class="text-center fw-bold">Enter Book Information Below:</div>
+    <div class="container overflow-hidden">
+      <div class="text-center fw-bold">Enter Book Information Below:</div>
+      <form>
         <div class="row mb-4">
           <div class="col-2 fw-bold">Book Image:</div>
-          <input class="col-3"
-            type="file"
-            name="bookImage"
-            value={inputs.bookImage || ""}
-            onChange={handleChange}/>
+          <input class="col-3" type="text" name="image" value={image} onChange={(e) => setImage(e.target.value)}/>
           <div class="col-8"></div>
         </div>
         <div class="row mb-4">
           <div class="col-2 fw-bold">Book Title:</div>
-          <input class="col-4 bg-light"
-            type="text" 
-            name="bookTitle" 
-            value={inputs.bookTitle || ""}
-            onChange={handleChange}/>
+          <input class="col-4 bg-light" type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} />
           <div class="col-6"></div>
         </div>
         <div class="row mb-4">
           <div class="col-2 fw-bold">Author:</div>
-          <input class="col-4 bg-light"
-            type="text" 
-            name="bookAuthor" 
-            value={inputs.bookAuthor || ""}
-            onChange={handleChange}/>
+          <input class="col-4 bg-light" type="text" name="author" value={author} onChange={(e) => setAuthor(e.target.value)}/>
           <div class="col-6"></div>
         </div>
         <div class="row">
           <div class="col fw-bold">Book Summary:</div>
         </div>
         <div class="row mb-4">
-          <textarea class="col"
-            name="bookSummary"
-            value={inputs.bookSummary || ""}
-            onChange={handleChange}></textarea>
+          <textarea class="col" value={Summary} onChange={(e) => setSummary(e.target.value)}></textarea>
           <div class="col-3"></div>
         </div>
         <div class="row">
@@ -72,34 +79,24 @@ function PostBookForm() {
         </div>
         <div class="row">
           <div class="col-2">ISBN</div>
-          <input class="col-4 bg-light"
-            name="bookISBN"
-            value={inputs.bookISBN || ""}
-            onChange={handleChange}/>
+          <input class="col-4 bg-light" type="text" value={ISBN} onChange={(e) => setISBN(e.target.value)} />
           <div class="col-6"></div>
         </div>
         <div class="row">
           <div class="col">Edition:</div>
-          <input class="col-4 bg-light"
-            name="bookEdition"
-            value={inputs.bookEdition || ""}
-            onChange={handleChange}/>
+          <input class="col-4 bg-light" type="text" value={edition} onChange={(e) => setEdition(e.target.value)}/>
           <div class="col-6"></div>
         </div>
         <div class="row">
           <div class="col-2">Format:</div>
-          <input class="col-2 bg-light"
-            name="bookFormat"
-            value={inputs.bookFormat || ""}
-            onChange={handleChange}/>
+          <input type="checkbox" class="col-1 bg-light" onClick={setHardcover}/>Hardcover
+          <div class="col"></div>
+          <input type="checkbox" class="col-1 bg-light" onClick={setPapercover}/>Papercover
           <div class="col-6"></div>
         </div>
         <div class="row mb-4">
           <div class="col-2">Class/Subject:</div>
-          <input class="col-4 bg-light"
-            name="bookSubject"
-            value={inputs.bookSubject || ""}
-            onChange={handleChange}/>
+          <input class="col-4 bg-light" type="text" value={subject} onChange={(e) => setSubject(e.target.value)}/>
           <div class="col-6"></div>
         </div>
         <div class="row">
@@ -111,50 +108,32 @@ function PostBookForm() {
         </div>
         <div class="row">
           <div class="col-1">Date:</div>
-          <input class="col-3 bg-light"
-            name="pickUpDate"
-            value={inputs.pickUpDate || ""}
-            onChange={handleChange}/>
+          <input class="col-3 bg-light" type="text" value={date1} onChange={(e) => setData1(e.target.value)}/>
           <div class="col-2"></div>
           <div class="col-1">Date:</div>
-          <input class="col-3 bg-light"
-            name="returnDate"
-            value={inputs.returnDate || ""}
-            onChange={handleChange}/>
+          <input class="col-3 bg-light" type="text" value={date2} onChange={(e) => setData2(e.target.value)}/>
         </div>
         <div class="row">
           <div class="col-1">Location:</div>
-          <input class="col-3 bg-light"
-            name="pickUpLocation"
-            value={inputs.pickUpLocation || ""}
-            onChange={handleChange}/>
+          <input class="col-3 bg-light" type="text" value={location1} onChange={(e) => setLocation1(e.target.value)}/>
           <div class="col-2"></div>
           <div class="col-1">Location:</div>
-          <input class="col-3 bg-light"
-            name="returnLocation"
-            value={inputs.returnLocation || ""}
-            onChange={handleChange}/>
+          <input class="col-3 bg-light" type="text" value={location2} onChange={(e) => setLocation2(e.target.value)}/>
         </div>
         <div class="row mb-4">
           <div class="col-1">Time:</div>
-          <input class="col-3 bg-light"
-            name="pickUpTime"
-            value={inputs.pickUpTime || ""}
-            onChange={handleChange}/>
+          <input class="col-3 bg-light" type="text" value={time1} onChange={(e) => setTime1(e.target.value)}/>
           <div class="col-2"></div>
           <div class="col-1">Time:</div>
-          <input class="col-3 bg-light"
-            name="returnTime"
-            value={inputs.returnTime || ""}
-            onChange={handleChange}/>
+          <input class="col-3 bg-light" type="text" value={time2} onChange={(e) => setTime2(e.target.value)}/>
         </div>
-        <div class="row">
-          <div class="col-4"></div>
-          <button class="col-2" type="submit">Post Book</button>
-          <div class="col"></div>
-        </div>
+      </form>
+      <div class="row">
+        <div class="col-4"></div>
+        <button class="col-2" onClick={handlePostButtonClick}><a href="/">Post Book</a></button>
+        <div class="col"></div>
       </div>
-    </form>
+    </div>
     
   );
 }

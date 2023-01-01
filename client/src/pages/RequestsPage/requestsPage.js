@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import SideBar from "../../components/SideBar/sideBar"
 import BookInfoCardList from "../../components/BookInfoCardList/bookInfoCardList"
 import axios from "axios";
+import NewNav from "../../components/NewNav";
 
 export default function RequestsPage(){
   const [myRequests, setMyRequests] = useState([]);
@@ -11,7 +12,7 @@ export default function RequestsPage(){
   useEffect(() => {
     async function getData(){
       try{
-        let myRequestsResponse = await axios.get("/api/myRequests/");
+        let myRequestsResponse = await axios.get("/api/textbooks/myRequests/");
         let myRequestsData = myRequestsResponse.data;
         setMyRequests(myRequests);
 
@@ -28,10 +29,50 @@ export default function RequestsPage(){
   function handleTab(newTab){
     setTab(newTab);
   }
+  const books1 = [
+    {
+      id: "1",
+      title: "Eloquent JavaScript",
+      author: "Marijn Haverbeke",
+      edition: "3rd",
+      format: "Physical",
+      sharing: "donated",
+      availability: "Available",
+      location: "Hunter",
+      date: "01/22/23",
+      time: "01:00pm",
+      bookImage: "https://m.media-amazon.com/images/I/51InjRPaF7L._AC_SY780_.jpg",
+      profileImage: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
+      profileName: "Some User"
+
+    }
+]
+const books2 = [
+  {
+    id: "1",
+    title: "Computer Organization and Design, MIPS Edition",
+    author: "David A. Patterson & John L. Hennessy",
+    edition: "6th",
+    format: "e-book",
+    sharing: "donated",
+    availability: "Available",
+    location: "Discord",
+    date: "10/30/2022",
+    time: "12:00pm",
+    bookImage: "https://m.media-amazon.com/images/P/0128201096.01._SCLZZZZZZZ_SX500_.jpg",
+    profileImage: "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png",
+    profileName: "Another User"
+  }
+]
   const requestsPage = 
   <div>
-      <SideBar nav="requests" changeTab={handleTab} />
-      <BookInfoCardList myRequestsList={myRequests} otherPeopleRequestsList={otherPeopleRequests} currentTab={tab} />
+    <NewNav />
+    <div class="container-fluid">
+      <div class="row mb-4">
+        <div class="col-2 fw-bold border border-dark border-bottom-0 border-top-0 border-bottom-right-0"><SideBar nav="requests" changeTab={handleTab} /></div>
+        <div class="col" style={{paddingTop:"10px"}}>{<BookInfoCardList myRequests={books1} otherPeopleRequests={books2} tab={tab}/>}</div>
+      </div>
+    </div>
   </div>
   return requestsPage;
 }

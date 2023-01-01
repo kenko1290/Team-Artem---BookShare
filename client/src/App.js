@@ -1,3 +1,4 @@
+import React from 'react'
 import "./App.css";
 // import EditProfile from "./edit_profile/edit_profile";
 import AboutUs from './pages/AboutUs';
@@ -11,6 +12,8 @@ import SignupPage from "./pages/SignupPage";
 import LogoutPage from "./pages/LogoutPage";
 import SettingsPage from "./pages/SettingsPage";
 import ProfilePage from "./pages/ProfilePage";
+import BookPage from './pages/BookPage';
+
 
 function App() {
 	return (
@@ -19,6 +22,7 @@ function App() {
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/about" element={<AboutUs />} />
 				<Route path="/post" element={<PostPage />} />
+				<Route path="/book" element={<BookPage />} />
 				<Route path="/home" element={<HomePage1 />} />
 				<Route path="/" element={<HomePage1 />} />
 				<Route path="/profile" element={<ProfilePage />} />

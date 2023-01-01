@@ -11,63 +11,63 @@ const Textbook = db.define("textbook", {
     type: Sequelize.INTEGER
   },
 
-  bookImage: {
+  image: {
     type: Sequelize.STRING
   },
 
-  bookTitle: {
+  title: {
     type: Sequelize.STRING,
   },
 
-  bookAuthor: {
+  author: {
     type: Sequelize.STRING,
   },
 
-  bookSummary: {
+  Summary: {
     type: Sequelize.STRING
   },
 
-  bookISBN: {
+  ISBN: {
     type: Sequelize.INTEGER,
   },
 
-  bookEdition: {
+  edition: {
     type: Sequelize.INTEGER,
   },
 
-  bookFormat: {
+  format: {
     type: Sequelize.STRING
   },
 
-  bookOwnerID: {
+  ownerID: {
     type: Sequelize.INTEGER
   },
 
-  bookSubject: {
+  subject: {
     type: Sequelize.STRING
   },
 
-  pickUpDate: {
+  date1: {
     type: Sequelize.DATEONLY
   },
 
-  pickUpTime: {
+  time1: {
     type: Sequelize.TIME
   },
 
-  pickUpLocation: {
+  location1: {
     type: Sequelize.STRING
   },
 
-  returnDate: {
+  date2: {
     type: Sequelize.DATEONLY
   },
 
-  returnTime: {
+  time2: {
     type: Sequelize.TIME
   },
 
-  returnLocation: {
+  location2: {
     type: Sequelize.STRING
   },
 });

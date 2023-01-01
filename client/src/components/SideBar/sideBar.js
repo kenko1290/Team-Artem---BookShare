@@ -21,11 +21,17 @@ function SideBar(props){
             <button>Clear Filter</button>
     </div>
 
+    function handleLendBookTabClick(){
+    props.changeTab("lendBook");
+        }
+    function handleDonateBookTabClick(){
+    props.changeTab("donateBook");
+    }
     const postPageSideBar = 
     <div className="sideBarContainer">
         <h5>Type Of Sharing</h5>
-        <button className="d-block">Lend Book</button>
-        <button className="d-block">Donate Book</button>
+        <button className="d-block" onClick={handleLendBookTabClick}>Lend Book</button>
+        <button className="d-block" onClick={handleDonateBookTabClick}>Donate Book</button>
     </div>
     
     function handleMyRequestsTabClick(){
@@ -65,11 +71,10 @@ function SideBar(props){
     const bookPageSideBar = 
     <div className="sideBarContainer">
         <div className="imageContainer">
-            <img src="https://d827xgdhgqbnd.cloudfront.net/wp-content/uploads/2016/04/09121712/book-cover-placeholder.png" alt="book" />
+        <img src="https://m.media-amazon.com/images/I/51InjRPaF7L._AC_SY780_.jpg" alt="book" />
         </div>
-
-        <button className="d-block">Request Book</button>
-
+        <a href="/request"><button className="d-block">Request Book</button></a>
+        
         <button className="d-block">Save Book</button>
 
         <h5>Owner</h5>

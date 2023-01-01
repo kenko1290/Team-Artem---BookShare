@@ -2,7 +2,6 @@ import BookInfoCard from "../BookInfoCard/bookInfoCard";
 import "./bookInfoCardList.css"
 import React from "react";
 
-
 function BookInfoCardList(props){
 <<<<<<< HEAD
     return (
@@ -65,12 +64,12 @@ function BookInfoCardList(props){
 
     let heading;
 
-    if(props.currentTab === "myRequests"){
+    if(props.tab === "myRequests"){
         heading = myRequestsHeading;
         return (
             <ul className="listContainer">
                 {heading}
-                {props.myRequestsList.map((book) => {
+                {props.myRequests.map((book) => {
                     return (
                         <BookInfoCard
                             key={book.id}  
@@ -87,12 +86,12 @@ function BookInfoCardList(props){
             </ul>
         )
     }
-    else if(props.currentTab === "requests"){
+    else if(props.tab === "requests"){
         heading = requestsHeading;
         return (
             <ul className="listContainer">
                 {heading}
-                {props.otherPeopleRequestsList.map((book) => {
+                {props.otherPeopleRequests.map((book) => {
                     return (
                         <BookInfoCard
                             key={book.id}  
@@ -109,56 +108,13 @@ function BookInfoCardList(props){
             </ul>
         )
     }
-    else if(props.currentTab ==="booksDonated" || props.tab ==="booksSaved")
+    else if(props.tab ==="booksDonated" || props.tab ==="booksSaved")
         heading = myAccountHeading1;
-    else if(props.currentTab === "booksOwned"){
+    else if(props.tab === "booksOwned")
         heading = myAccountHeading2;
-        return (
-            <ul className="listContainer">
-                {heading}
-                {props.bookOwnedList.map((book) => {
-                    return (
-                        <BookInfoCard
-                            key={book.id}  
-                            title={book.title}
-                            author={book.author}
-                            bookImage={book.bookImage}
-                            date={book.date}
-                            profileImage={book.profileImage}
-                            profileName={book.profileName}
-                            tab={props.tab}
-                        />
-                    )
-                })}
-            </ul>
-        )
-
-    }
-    else if(props.currentTab === "booksBorrowed"){
+    else if(props.tab === "booksBorrowed" || props.tab ==="booksLent")
         heading = myAccountHeading3;
-        return (
-            <ul className="listContainer">
-                {heading}
-                {props.bookBorrowedList.map((book) => {
-                    return (
-                        <BookInfoCard
-                            key={book.id}  
-                            title={book.title}
-                            author={book.author}
-                            bookImage={book.bookImage}
-                            date={book.date}
-                            profileImage={book.profileImage}
-                            profileName={book.profileName}
-                            tab={props.tab}
-                        />
-                    )
-                })}
-            </ul>
-        )
-    }
-    
-    else if(props.currentTab === "booksLent"){
-        heading = myAccountHeading3;
+<<<<<<< HEAD
         return (
             <ul className="listContainer">
                 {heading}
@@ -180,6 +136,31 @@ function BookInfoCardList(props){
         )
     }
 >>>>>>> main
+=======
+    else
+        heading = "";
+
+    return (
+        <ul className="listContainer">
+            {heading}
+            {props.bookList.map((book) => {
+                return (
+                    <BookInfoCard
+                        key={book.id}  
+                        title={book.title}
+                        author={book.author}
+                        bookImage={book.bookImage}
+                        date={book.date}
+                        profileImage={book.profileImage}
+                        profileName={book.profileName}
+                        tab={props.tab}
+                    />
+                )
+            })}
+        </ul>
+    )
+
+>>>>>>> a041570d83d52b0862f8ce0f63d77fdd8dc91a24
 }
 
 export default BookInfoCardList;
